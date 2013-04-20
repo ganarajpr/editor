@@ -4,8 +4,6 @@
     var services = angular.module('shared.services');
 
     services.factory("shared.services.ModuleService", [
-        '',
-
         function () {
             var modules = [];
             return {
@@ -22,6 +20,14 @@
                     }
                     if(!alreadyExists){
                         modules.push(moduleName);
+                    }
+                },
+                removeModule : function(moduleName){
+                    for (var i = 0; i < modules.length;i++) {
+                        if(modules[i] === moduleName){
+                            modules.splice(i,1);
+                            break;
+                        }
                     }
                 }
             };

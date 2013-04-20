@@ -23,8 +23,19 @@
     <div class="container-fluid maincontent" ng-controller="main.controllers.MainController">
         <div class="row" ng-controller="main.controllers.ModuleController">
             <div class="span3">
-                <input type="text" ng-model="moduleName"/>
-                <button class="btn btn-inverse" ng-disabled="!moduleName">Add Module</button>
+                <div class="row">
+                    <input type="text" ng-model="moduleName"/>
+                    <button class="btn btn-inverse" ng-disabled="!moduleName" ng-click="addModule()">Add Module</button>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="row">
+                    <ul>
+                        <li ng-repeat="module in modules">
+                            {{module}}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -36,5 +47,6 @@
     <script type="text/javascript" src="js/app/main/main.js"></script>
     <script type="text/javascript" src="js/app/main/controllers/MainController.js"></script>
     <script type="text/javascript" src="js/app/main/controllers/ModuleController.js"></script>
+    <script type="text/javascript" src="js/app/shared/services/ModuleService.js"></script>
 </body>
 </html>

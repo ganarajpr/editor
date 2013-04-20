@@ -5,9 +5,14 @@
 
     controllers.controller("main.controllers.ModuleController", [
         '$scope',
-        function ($scope) {
-            $scope.addModule = function(){
+        'shared.services.ModuleService',
+        function ($scope,moduleService) {
 
+            $scope.modules = moduleService.getAllModules();
+
+            $scope.addModule = function(){
+                moduleService.addModule($scope.moduleName);
+                $scope.moduleName = "";
             };
         }
     ]);
