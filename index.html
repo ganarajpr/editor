@@ -2,11 +2,25 @@
 <html ng-app="app">
 <head>
     <title>Angular Editor</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="css/editor/styles.css"/>
 </head>
 <body>
-    <div class="container" ng-controller="main.controllers.MainController">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">Title</a>
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid maincontent" ng-controller="main.controllers.MainController">
         <div class="row">
             <div class="span3">Hello {{text}}</div>
         </div>
