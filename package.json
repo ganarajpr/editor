@@ -1,0 +1,9 @@
+{
+    "name":"basic-server",
+    "version":"0.0.1",
+    "private":true,
+    "dependencies":{
+        "connect":"2.7.x",
+        "utils":">= 0.1.4"
+    }
+}
