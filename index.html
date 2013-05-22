@@ -25,8 +25,8 @@
             <div class="span2 left-menu">
 
             </div>
-            <div class="span10 workspace">
-                <div class="drawingArea">
+            <div class="span10 workspace" ng-controller="main.controllers.MainController">
+                <div class="drawingArea" drawing-area="drawing">
 
                 </div>
 
@@ -42,5 +42,8 @@
     <script type="text/javascript" src="js/app/main/controllers/MainController.js"></script>
     <script type="text/javascript" src="js/app/main/controllers/ModuleController.js"></script>
     <script type="text/javascript" src="js/app/shared/services/ModuleService.js"></script>
+    <script type="text/javascript" src="js/app/shared/directives/box.js"></script>
+
+
 </body>
 </html>

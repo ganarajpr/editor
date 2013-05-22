@@ -6,7 +6,7 @@
     controllers.controller("main.controllers.MainController", [
         '$scope',
         function ($scope) {
-            $scope.text = "World";
+            $scope.drawing = true;
         }
     ]);
 }());
