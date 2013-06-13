@@ -18,15 +18,26 @@
             var top = 0;
             var left = 0;
             var box;
+            var offsetLeft;
+            var offsetTop;
+
             function onMouseDown(event){
+                if(event.which === 3){
+                    return true;
+                }
                 box = angular.element(boxTemplate);
                 element.append(box);
+                console.log(element);
+                offsetLeft = element[0].offsetLeft;
+                offsetTop = element[0].offsetTop;
+
                 top = event.clientY;
                 left = event.clientX;
-                box.css("top",event.clientY+"px");
-                box.css("left",event.clientX+"px");
-                element.bind("mouseup",onMouseUp);
-                element.bind("mousemove",onMouseMove);
+                box.css("top",( event.clientY - offsetTop ) +"px");
+                box.css("left",( event.clientX - offsetLeft ) +"px");
+                console.log(event.clientY - offsetTop,event.clientX - offsetLeft );
+                angular.element(document).bind("mouseup",onMouseUp);
+                angular.element(document).bind("mousemove",onMouseMove);
             }
 
             function onMouseMove(event){
@@ -36,7 +47,7 @@
                 else{
                     var height = top - event.clientY;
                     box.css("height",height+"px");
-                    box.css("top",event.clientY+"px");
+                    box.css("top",( event.clientY - offsetTop ) +"px");
                     top = event.clientY;
                 }
 
@@ -46,15 +57,23 @@
                 else{
                     var width = left - event.clientX;
                     box.css("width",width+"px");
-                    box.css("left",event.clientX+"px");
+                    box.css("left",( event.clientX - offsetLeft ) +"px");
                     left = event.clientX;
                 }
             }
 
             function onMouseUp(event){
-                element.unbind("mousemove",onMouseMove);
-                element.unbind("mouseup",onMouseUp);
+                angular.element(document).unbind("mousemove",onMouseMove);
+                angular.element(document).unbind("mouseup",onMouseUp);
             }
         };
     });
+
+    app.directive('drag',function() {
+        return function(scope, elm, attrs) {
+            elm.draggable({ containment: "parent"});
+            elm.css({zIndex:2000});
+        };
+    });
+
 })();

@@ -21,26 +21,32 @@
         </div>
     </div>-->
     <div class="container-fluid main-container">
-        <div class="row-fluid">
-            <div class="span2 left-menu">
 
-            </div>
-            <div class="span10 workspace" ng-controller="main.controllers.MainController">
-                <div class="drawingArea" drawing-area="drawing">
+    </div>
 
-                </div>
+    <div class="css-overlay" data-ng-controller="OverlayController">
+        <!--<div class="css-overlay" option-menu="options" selected-option="state.selectedOption">
 
-            </div>
+        </div>-->
+
+        <div drag class="padded">
+            <select ng-options="opt for opt in options" ng-model="state.selectedOption">
+
+            </select>
         </div>
     </div>
 
 
-    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui-1.10.3.custom.js"></script>
+    <script type="text/javascript" src="js/lib/angular.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
     <script type="text/javascript" src="js/app/shared/shared.js"></script>
     <script type="text/javascript" src="js/app/main/main.js"></script>
     <script type="text/javascript" src="js/app/layout/layout.js"></script>
     <script type="text/javascript" src="js/app/layout/services/Node.js"></script>
+    <script type="text/javascript" src="js/app/layout/OverlayController.js"></script>
+    <script type="text/javascript" src="js/app/layout/directives/optionmenu.js"></script>
     <script type="text/javascript" src="js/app/main/controllers/MainController.js"></script>
     <script type="text/javascript" src="js/app/main/controllers/ModuleController.js"></script>
     <script type="text/javascript" src="js/app/shared/services/ModuleService.js"></script>
