@@ -4,6 +4,8 @@
     "private":true,
     "dependencies":{
         "connect":"2.7.x",
-        "utils":">= 0.1.4"
+        "utils":">= 0.1.4",
+        "stylus" : "latest",
+        "axis-css":"latest"
     }
 }
