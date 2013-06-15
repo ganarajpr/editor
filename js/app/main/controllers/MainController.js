@@ -3,10 +3,11 @@
 
     var controllers = angular.module("main.controllers");
 
-    controllers.controller("main.controllers.MainController", [
+    controllers.controller("MainController", [
         '$scope',
-        function ($scope) {
-            $scope.drawing = true;
+        'NodeService',
+        function ($scope,NodeService) {
+            $scope.nodes = NodeService.rootNode.children;
         }
     ]);
 }());

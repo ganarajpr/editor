@@ -3,7 +3,7 @@
 
     var layout = angular.module("layout");
 
-    layout.factory("layout.services.Node", [
+    layout.factory("NodeService", [
         function () {
             function Node(name){
                 this.name = name;
@@ -17,9 +17,20 @@
             }
 
             //Node.prototype.
+            var rootNode = new Node();
+            rootNode.name = "Root";
+
+            return {
+                addNode : function(name){
+                    var node = new Node();
+                    node.name = name;
+                    rootNode.children.push(node);
+                    return node;
+                },
+                rootNode : rootNode
+            };
 
 
-            return Node;
         }
     ]);
 }());

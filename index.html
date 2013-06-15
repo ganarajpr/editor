@@ -21,7 +21,16 @@
             </div>
         </div>
     </div>-->
-    <div class="container-fluid main-container">
+    <div class="container-fluid main-container" data-ng-controller="MainController">
+        <div ng-repeat="node in nodes" ng-switch="node.name">
+            <div ng-switch-when="Box" class="box"></div>
+            <a href="" ng-switch-when="Link">Link</a>
+            <input type="text" class="input-medium" ng-switch-when="Input">
+            <ul ng-switch-when="List">
+                <li>List Item</li>
+            </ul>
+            <button class="btn btn-inverse" ng-switch-when="Button">Button</button>
+        </div>
 
     </div>
 
@@ -34,6 +43,7 @@
             <select ng-options="opt for opt in options" ng-model="state.selectedOption">
 
             </select>
+            <button ng-click="onAdd()" class="btn btn-primary">Add</button>
         </div>
     </div>
 
