@@ -7,7 +7,7 @@
         '$scope',
         'NodeService',
         function ($scope,NodeService) {
-            $scope.nodes = NodeService.rootNode.children;
+            //$scope.nodes = NodeService.rootNode.children;
         }
     ]);
 }());

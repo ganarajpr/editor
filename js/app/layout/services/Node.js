@@ -4,7 +4,8 @@
     var layout = angular.module("layout");
 
     layout.factory("NodeService", [
-        function () {
+        '$rootScope',
+        function ($rootScope) {
             function Node(name){
                 this.name = name;
                 this.children = [];
@@ -25,6 +26,7 @@
                     var node = new Node();
                     node.name = name;
                     rootNode.children.push(node);
+                    $rootScope.$broadcast("NODE_ADDED",node);
                     return node;
                 },
                 rootNode : rootNode

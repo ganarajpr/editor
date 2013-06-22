@@ -21,8 +21,8 @@
             </div>
         </div>
     </div>-->
-    <div class="container-fluid main-container" data-ng-controller="MainController">
-        <div ng-repeat="node in nodes" ng-switch="node.name">
+    <div class="container-fluid main-container" data-ng-controller="MainController" container>
+        <!--<div ng-repeat="node in nodes" ng-switch="node.name">
             <div ng-switch-when="Box" class="box"></div>
             <a href="" ng-switch-when="Link">Link</a>
             <input type="text" class="input-medium" ng-switch-when="Input">
@@ -31,7 +31,8 @@
             </ul>
             <button class="btn btn-inverse" ng-switch-when="Button">Button</button>
             <img width="200" height="200" ng-src="" ng-switch-when="Image">
-        </div>
+        </div>-->
+
 
     </div>
 
@@ -40,11 +41,12 @@
 
         </div>-->
 
-        <div drag class="padded">
-            <select ng-options="opt for opt in options" ng-model="state.selectedOption">
+        <div drag class=" vertical-center-parent">
+            <select class="vertical-center" ng-options="opt for opt in options" ng-model="state.selectedOption">
 
             </select>
-            <button ng-click="onAdd()" class="btn btn-primary">Add</button>
+            <button ng-click="onAdd()" class="btn btn-primary vertical-center">Add</button>
+            <div class="vertical-center" style="height: 100px;display: inline-block;width: 1px;"></div>
         </div>
     </div>
 
@@ -63,6 +65,7 @@
     <script type="text/javascript" src="js/app/main/controllers/ModuleController.js"></script>
     <script type="text/javascript" src="js/app/shared/services/ModuleService.js"></script>
     <script type="text/javascript" src="js/app/shared/directives/box.js"></script>
+    <script type="text/javascript" src="js/app/shared/directives/container.js"></script>
 
 
 </body>
